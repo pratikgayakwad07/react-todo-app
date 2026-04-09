@@ -7,7 +7,7 @@ on:
 
 jobs:
   use-reusable-workflow:
-    uses: pratikgayakwad07/Reusable-Workflows/workflows/react-nginx-deploy.yml@main
+    uses: pratikgayakwad07/Reusable-Workflows/.github/workflows/react-nginx-deploy.yml@main
 
     with:
       node-version: "18"
