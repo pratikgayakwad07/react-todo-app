@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  use-reusable-workflow:
     uses: pratikgayakwad07/Reusable-Workflows/workflows/react-nginx-deploy.yml@main
 
     with:
