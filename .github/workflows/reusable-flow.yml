@@ -1,0 +1,18 @@
+name: Deploy React App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    uses: pratikgayakwad07/Reusable-Workflows/workflows/react-nginx-deploy.yml@main
+
+    with:
+      node-version: "18"
+      build-folder: "build"
+
+    secrets:
+      EC2_HOST: ${{ secrets.EC2_HOST }}
+      EC2_SSH_KEY: ${{ secrets.EC2_KEY }}
