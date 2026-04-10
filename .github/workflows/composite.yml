@@ -16,7 +16,7 @@ jobs:
 
       # 2. Use Composite Action
       - name: Run React Deploy Action
-        uses: My-Org-Composite-Action/.github/actions/react-nginx-deploy@main
+        uses: pratikgayakwad07/My-Org-Composite-Action/.github/actions/react-nginx-deploy@main
         with:
           node-version: "18"
           build-folder: "build"
