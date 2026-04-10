@@ -1,0 +1,25 @@
+name: Deploy React App using Composite Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 2. Use Composite Action
+      - name: Run React Deploy Action
+        uses: My-Org-Composite-Action/.github/actions/react-nginx-deploy@main
+        with:
+          node-version: "18"
+          build-folder: "build"
+          ec2-host: ${{ secrets.EC2_HOST }}
+          ec2-user: "ubuntu"
+          ec2-ssh-key: ${{ secrets.EC2_SSH_KEY }}
